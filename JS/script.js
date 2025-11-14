@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'imagens/foto3.jpg',
         'imagens/foto4.jpg',
         'imagens/foto5.jpg',
-        'imagens/foto5.jpg',
+        'imagens/foto6.jpg',
         'imagens/foto5.jpg',
         'imagens/foto5.jpg',
         'imagens/foto5.jpg',
