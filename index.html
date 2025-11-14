@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Você ❤️</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/razoes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="splash-screen">
+        <button id="enter-button">❤️ CLIQUE ❤️</button>
+    </div>
+
+    <div id="main-content">
+
+        <div id="music-player">
+            <img src="imagens/capa-musica.jpg" alt="Capa do Álbum" id="player-art">
+            <div id="player-info">
+                <div id="player-song-title">And I Love Her</div>
+                <div id="player-song-artist">The Beatles</div>
+            </div>
+
+            <div id="timeline-container">
+                <div id="timeline-progress"></div>
+            </div>
+
+            <button id="play-pause-btn">
+                <i class="fas fa-play"></i>
+            </button>
+        </div>
+        <div id="phone-frame">
+            <img id="slideshow" alt="Nossas fotos">
+        </div>
+
+        <div id="counter"></div>
+        <p class="frase-romantica">
+            A cada dia que passa, meu coração se enche mais de carinho e admiração por você.
+        </p>
+
+        <section id="secao-sentimentos">
+            <h2>Isso é pra quando você estiver sentindo algo:</h2>
+            <div class="botoes-sentimentos">
+                <a href="pages/triste.html" class="botao-sentimento">Triste 😟</a>
+                <a href="pages/cansada.html" class="botao-sentimento">Cansada 😴</a>
+                <a href="pages/saudade.html" class="botao-sentimento">Com saudade 🥺</a>
+                <a href="pages/feliz.html" class="botao-sentimento">Feliz 🥰</a>
+            </div>
+        </section>
+
+        <section id="secao-razoes">
+            <h2>Razão para eu te amar:</h2>
+            <div class="caixa-razao">
+                <p id="razao-texto">
+                    ...
+                </p>
+            </div>
+            <button id="botao-nova-razao">Outra razão 🥰</button>
+        </section>
+
+    </div>
+
+    <audio id="musica-de-fundo" src="Audio/nossa-musica.mp3" loop></audio>
+
+    <script src="JS/script.js"></script>
+    <script src="JS/razoes.js"></script>
+</body>
+</html>

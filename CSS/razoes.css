@@ -1,0 +1,70 @@
+/* ==================================================
+   Seção: Caixa de Razões ("Eu te amo")
+
+   Objetivo:
+   - Estilizar a área que exibe uma razão aleatória
+   - IDs referenciados no JS: #secao-razoes, #razao-texto,
+     #botao-nova-razao
+   ================================================== */
+
+#secao-razoes {
+    width: 90%;
+    max-width: 340px; /* largura máxima para alinhar com outros elementos */
+    margin-top: 40px; /* espaçamento superior */
+    padding: 20px;
+    background-color: rgba(30, 30, 50, 0.4); /* fundo semi-transparente */
+    border-radius: 12px;
+    text-align: center;
+    z-index: 10;
+}
+
+#secao-razoes h2 {
+    font-size: 1rem;
+    color: #c0c0c0;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.caixa-razao {
+    width: 100%;
+    min-height: 100px; /* altura mínima para consistência visual */
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: rgba(10, 10, 20, 0.5); /* fundo ligeiramente mais escuro */
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box; /* inclui padding na largura/altura totais */
+    
+    /* centraliza o conteúdo vertical e horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#razao-texto {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0;
+    /* transição suave de opacidade (tempo correspondente ao JS) */
+    transition: opacity 0.5s ease;
+}
+
+#botao-nova-razao {
+    text-decoration: none;
+    color: white;
+    background-color: #8f94fb; /* cor principal (roxo) */
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#botao-nova-razao:hover {
+    background-color: #aab0ff; /* tom mais claro ao passar o mouse */
+    transform: scale(1.05);
+}

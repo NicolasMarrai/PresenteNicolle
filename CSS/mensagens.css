@@ -1,0 +1,64 @@
+/* Este é o arquivo CSS/mensagens.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #0a0a1a; /* Fundo escuro igual ao principal */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Não precisa rolar aqui */
+}
+
+.container-mensagem {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.animada {
+    font-size: 1.6rem; /* Letra maior para destacar */
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 25px 0;
+    opacity: 0; /* Começa invisível */
+    animation: fadeIn 2s forwards; /* "forwards" mantém visível no final */
+}
+
+/* Animação que faz o texto aparecer */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); /* Começa um pouco abaixo */
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); /* Sobe para o lugar */
+    }
+}
+
+.botao-voltar {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #4e54c8; /* Roxo/Azul */
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 30px;
+    opacity: 0; /* Começa invisível também */
+    animation: fadeIn 2s forwards;
+    transition: all 0.3s ease;
+}
+
+.botao-voltar:hover {
+    background-color: #8f94fb;
+    transform: scale(1.05);
+}
