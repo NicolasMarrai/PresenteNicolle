@@ -10,16 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Lista de fotos do slideshow (adicione seus caminhos aqui)
     const minhasFotos = [
-        'imagens/foto1.jpg',
-        'imagens/foto2.jpg',
-        'imagens/foto3.jpg',
-        'imagens/foto4.jpg',
-        'imagens/foto5.jpg',
-        'imagens/foto6.jpg',
-        'imagens/foto5.jpg',
-        'imagens/foto5.jpg',
-        'imagens/foto5.jpg',
-        'imagens/foto5.jpg' 
+        'imagem/foto1.jpg',
+        'imagem/foto2.jpg',
+        'imagem/foto3.jpg',
+        'imagem/foto4.jpg',
+        'imagem/foto5.jpg',
+        'imagem/foto6.jpg',
+        'imagem/foto5.jpg',
+        'imagem/foto5.jpg',
+        'imagem/foto5.jpg',
+        'imagem/foto5.jpg' 
     ];
 
     // Data inicial do relacionamento (para o contador)
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Informações da música (edite aqui)
     const nomeMusica = "And I Love Her";
     const nomeArtista = "The Beatles";
-    const capaMusica = "imagens/capa-musica.jpg";
+    const capaMusica = "imagem/capa-musica.jpg";
 
     /* ============================================
        SELEÇÃO DE ELEMENTOS DO DOM
