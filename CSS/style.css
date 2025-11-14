@@ -223,6 +223,20 @@ body {
     position: relative;
 }
 
+/* Mensagem final de nota */
+.nota-de-amor {
+    margin: 40px 20px;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #a0a0a0;
+    text-align: center;
+    max-width: 600px;
+    padding: 0 15px;
+    line-height: 1.6;
+    z-index: 10;
+    position: relative;
+}
+
 /* ============================================
    ANIMAÇÃO DE EMOJIS
    ============================================ */
@@ -277,8 +291,10 @@ body {
 }
 
 .botao-sentimento {
-    display: block;
-    width: 100%;
+    /* Assegura que caibam dois botões por linha e se ajustem */
+    flex-grow: 1;
+    min-width: 45%;
+    max-width: 48%;
     text-align: center;
     text-decoration: none;
     color: white;
@@ -293,32 +309,7 @@ body {
     flex-shrink: 0;
 }
 
-.botoes-sentimentos button {
-    /* Assegura que caibam dois botões por linha e se ajustem */
-    flex-grow: 1;
-    min-width: 45%;
-    max-width: 48%;
-
-    /* Estilos Visuais */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    background-color: rgba(60, 60, 90, 0.9);
-    padding: 15px 25px;
-    /* Aumentei o padding para ficar mais vistoso */
-    border-radius: 25px;
-    font-size: 1.1rem;
-    /* Aumentei a fonte */
-    font-weight: bold;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.botoes-sentimentos button:hover {
+.botao-sentimento:hover {
     background-color: #8f94fb;
     /* Cor de destaque ao passar o mouse */
     transform: scale(1.02);
