@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Você ❤️</title>
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/razoes.css">
+    <link rel="stylesheet" href="CSS/modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
@@ -41,13 +43,21 @@
             A cada dia que passa, meu coração se enche mais de carinho e admiração por você.
         </p>
 
-        <section id="secao-sentimentos">
+        <section class="secao-sentimentos">
             <h2>Isso é pra quando você estiver sentindo algo:</h2>
             <div class="botoes-sentimentos">
-                <a href="pages/triste.html" class="botao-sentimento">Triste 😟</a>
-                <a href="pages/cansada.html" class="botao-sentimento">Cansada 😴</a>
-                <a href="pages/saudade.html" class="botao-sentimento">Com saudade 🥺</a>
-                <a href="pages/feliz.html" class="botao-sentimento">Feliz 🥰</a>
+                <button onclick="abrirModal('triste')" class="sentimento-triste">
+                    Triste 🥺
+                </button>
+                <button onclick="abrirModal('cansada')" class="sentimento-cansada">
+                    Cansada 😩
+                </button>
+                <button onclick="abrirModal('saudade')" class="sentimento-saudade">
+                    Com saudade 😔
+                </button>
+                <button onclick="abrirModal('feliz')" class="sentimento-feliz">
+                    Feliz 🥰
+                </button>
             </div>
         </section>
 
@@ -65,7 +75,18 @@
 
     <audio id="musica-de-fundo" src="Audio/nossa-musica.mp3" loop></audio>
 
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-conteudo">
+            <span class="modal-titulo">Selecionei isto para você, meu amor:</span>
+            <p id="modal-frase" class="modal-frase"></p>
+            <button class="modal-fechar" onclick="fecharModal()">
+                &times; </button>
+        </div>
+    </div>
+
+    <script src="JS/modal.js"></script>
     <script src="JS/script.js"></script>
     <script src="JS/razoes.js"></script>
 </body>
+
 </html>
