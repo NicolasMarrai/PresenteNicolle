@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Data inicial do relacionamento (para o contador)
     // Descomente e edite conforme necessário: new Date(YYYY, MM-1, DD, HH, MM, SS)
-    // const dataInicio = new Date(2022, 10, 15, 18, 0, 0);
+    const dataInicio = new Date(2025, 10, 19, 20, 30, 0);
 
     // Informações da música (edite aqui)
     const nomeMusica = "And I Love Her";
