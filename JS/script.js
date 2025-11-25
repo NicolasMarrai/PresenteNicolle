@@ -10,16 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Lista de fotos do slideshow (adicione seus caminhos aqui)
     const minhasFotos = [
-        'imagem/foto1.jpg',
+        'imagem/foto1.jpeg',
         'imagem/foto2.jpg',
         'imagem/foto3.jpg',
         'imagem/foto4.jpg',
         'imagem/foto5.jpg',
-        'imagem/foto6.jpg',
-        'imagem/foto5.jpg',
-        'imagem/foto5.jpg',
-        'imagem/foto5.jpg',
-        'imagem/foto5.jpg' 
+        'imagem/foto6.jpeg',
+        'imagem/foto8.jpg',
+        'imagem/foto8.jpg',
+        'imagem/foto8.jpg',
+        'imagem/foto8.jpg' 
     ];
 
     // Data inicial do relacionamento (para o contador)
