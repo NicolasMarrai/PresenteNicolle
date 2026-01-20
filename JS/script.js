@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'imagem/foto4.jpg',
         'imagem/foto5.jpg',
         'imagem/foto6.jpeg',
+        'imagem/foto7.jpg',
         'imagem/foto8.jpg',
-        'imagem/foto8.jpg',
-        'imagem/foto8.jpg',
-        'imagem/foto8.jpg' 
+        'imagem/foto9.jpg',
+        'imagem/foto10.jpg' 
     ];
 
     // Data inicial do relacionamento (para o contador)
