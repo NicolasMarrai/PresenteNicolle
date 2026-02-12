@@ -1,0 +1,150 @@
+/* ==================================================
+   Seção: Carta de Desculpas
+   
+   Objetivo:
+   - Estilizar a seção de pedido de desculpas de forma
+     elegante e romântica
+   ================================================== */
+
+#secao-desculpas {
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto 40px;
+    padding: 30px 25px;
+    background: linear-gradient(135deg, rgba(50, 30, 60, 0.5), rgba(30, 30, 50, 0.5));
+    border-radius: 15px;
+    border: 2px solid rgba(255, 192, 203, 0.3);
+    box-shadow: 0 8px 32px rgba(255, 192, 203, 0.15);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+#secao-desculpas::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        rgba(255, 192, 203, 0.1), 
+        rgba(255, 182, 193, 0.1), 
+        rgba(255, 105, 180, 0.1));
+    border-radius: 15px;
+    z-index: -1;
+    animation: borda-suave 3s ease-in-out infinite;
+}
+
+@keyframes borda-suave {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+.icone-carta {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    animation: envelope-open 2s ease-in-out;
+}
+
+@keyframes envelope-open {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(180deg); }
+    100% { transform: rotateX(0deg); }
+}
+
+#secao-desculpas h2 {
+    font-size: 1.4rem;
+    color: #ffb6c1;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(255, 182, 193, 0.3);
+}
+
+.carta-conteudo {
+    background: rgba(10, 10, 20, 0.4);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 3px solid rgba(255, 192, 203, 0.5);
+    max-height: 400px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 192, 203, 0.5) rgba(10, 10, 20, 0.3);
+}
+
+.carta-conteudo::-webkit-scrollbar {
+    width: 6px;
+}
+
+.carta-conteudo::-webkit-scrollbar-track {
+    background: rgba(10, 10, 20, 0.3);
+    border-radius: 10px;
+}
+
+.carta-conteudo::-webkit-scrollbar-thumb {
+    background: rgba(255, 192, 203, 0.5);
+    border-radius: 10px;
+}
+
+.carta-conteudo p {
+    font-size: 1rem;
+    color: #e8e8e8;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: left;
+    font-family: 'Georgia', serif;
+}
+
+.carta-conteudo p:last-child {
+    margin-bottom: 0;
+    text-align: center;
+    font-weight: 600;
+    color: #ffb6c1;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+.assinatura {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 192, 203, 0.2);
+    font-style: italic;
+    color: #c0c0c0;
+    font-size: 0.9rem;
+}
+
+/* Animação de entrada */
+#secao-desculpas {
+    animation: fade-in-up 1s ease-out;
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    #secao-desculpas {
+        padding: 25px 20px;
+    }
+    
+    #secao-desculpas h2 {
+        font-size: 1.2rem;
+    }
+    
+    .carta-conteudo p {
+        font-size: 0.95rem;
+    }
+    
+    .icone-carta {
+        font-size: 2.5rem;
+    }
+}

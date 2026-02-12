@@ -21,7 +21,9 @@
     padding: 30px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
     width: 90%;
-    max-width: 450px;
+    max-width: 500px;
+    max-height: 85vh; /* Limita altura para não sair da tela */
+    overflow-y: auto; /* Permite scroll se necessário */
     text-align: center;
     /* Efeito Glassmorphism (efeito vidro fosco) */
     backdrop-filter: blur(10px); 
@@ -29,6 +31,24 @@
     /* Animação */
     transform: scale(0.9);
     transition: all 0.3s ease-out;
+    /* Scrollbar personalizada */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 230, 128, 0.5) rgba(36, 36, 64, 0.5);
+}
+
+/* Scrollbar para Webkit (Chrome, Safari, Edge) */
+.modal-conteudo::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-conteudo::-webkit-scrollbar-track {
+    background: rgba(36, 36, 64, 0.5);
+    border-radius: 10px;
+}
+
+.modal-conteudo::-webkit-scrollbar-thumb {
+    background: rgba(255, 230, 128, 0.5);
+    border-radius: 10px;
 }
 
 /* Quando o modal está ativo */
@@ -48,12 +68,14 @@
 
 .modal-frase {
     font-family: 'Playfair Display', serif; /* Fonte elegante */
-    font-size: 1.6em;
-    color: #ffd700; /* Cor de destaque (ouro) */
+    font-size: 1.5em;
+    color: #ffe680; /* Amarelo mais suave e legível */
     margin-top: 10px;
     margin-bottom: 20px;
-    line-height: 1.4;
+    line-height: 1.6;
     font-style: italic;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Sombra para melhor legibilidade */
+    font-weight: 500;
 }
 
 /* Botão de Fechar */

@@ -3,8 +3,7 @@
 // 1. LISTA DE FRASES PARA CADA SENTIMENTO
 const frasesPorSentimento = {
     triste: [
-        "Oi, meu amor...Eu sei que você está se sentindo pra baixo agora. Mas eu quero que você se lembre de uma coisa: ",
-        "Você é a pessoa mais forte e incrível que eu conheço. Esse sentimento vai passar, eu prometo. E até lá, eu estou aqui com você. Sempre. Te amo mais que tudo. ❤️"
+        "Oi, meu amor...Eu sei que você está se sentindo pra baixo agora. Mas eu quero que você se lembre de uma coisa: Você é a pessoa mais forte e incrível que eu conheço. Esse sentimento vai passar, eu prometo. E até lá, eu estou aqui com você. Sempre. Te amo mais que tudo. ❤️"
     ],
     cansada: [
         "Ei, eu sei que você está cansada. O dia foi pesado, e está sendo bem difícil. Mas eu quero que você saiba que você não está sozinha. Eu estou aqui para você descansar e se apoiar quando precisar. Tire um tempo pra você, respire, e faça algo que você goste. Porque você merece descanso, merece paz. E merece alguém que a ama do jeito que eu amo você. 💕"
