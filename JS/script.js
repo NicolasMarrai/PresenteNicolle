@@ -1,13 +1,10 @@
-/* ============================================
-   INICIALIZAÇÃO - AGUARDA CARREGAMENTO DA PÁGINA
-   ============================================ */
+/*
+  script.js — inicialização principal
+  Slideshow, contador, player de música, emojis
+*/
 
 document.addEventListener("DOMContentLoaded", () => {
-  /* ============================================
-       CONFIGURAÇÕES EDITÁVEIS
-       ============================================ */
-
-  // Lista de fotos do slideshow (adicione seus caminhos aqui)
+  /* ---- CONFIGURAÇÕES ---- */
   const minhasFotos = [
     "imagem/foto1.jpeg",
     "imagem/foto2.jpg",
@@ -21,109 +18,76 @@ document.addEventListener("DOMContentLoaded", () => {
     "imagem/foto10.jpeg",
   ];
 
-  // Data inicial do relacionamento (para o contador)
-  // Descomente e edite conforme necessário: new Date(YYYY, MM-1, DD, HH, MM, SS)
-  const dataInicio = new Date(2025, 10, 19, 20, 30, 0);
+  const dataInicio = new Date(2025, 10, 19, 20, 30, 0); // 19/11/2025
 
-  // Informações da música (edite aqui)
   const nomeMusica = "And I Love Her";
   const nomeArtista = "The Beatles";
   const capaMusica = "imagem/capa-musica.jpg";
 
-  /* ============================================
-       SELEÇÃO DE ELEMENTOS DO DOM
-       ============================================ */
-
+  /* ---- ELEMENTOS ---- */
   const splashScreen = document.getElementById("splash-screen");
   const mainContent = document.getElementById("main-content");
   const enterButton = document.getElementById("enter-button");
   const slideshowImg = document.getElementById("slideshow");
   const counterElement = document.getElementById("counter");
-
-  // Elementos do player de música
   const musica = document.getElementById("musica-de-fundo");
   const playPauseBtn = document.getElementById("play-pause-btn");
   const playPauseIcon = playPauseBtn.querySelector("i");
   const timelineContainer = document.getElementById("timeline-container");
   const timelineProgress = document.getElementById("timeline-progress");
 
-  /* ============================================
-       CONFIGURAR INFORMAÇÕES DO PLAYER
-       ============================================ */
-
+  /* ---- PLAYER INFO ---- */
   document.getElementById("player-song-title").textContent = nomeMusica;
   document.getElementById("player-song-artist").textContent = nomeArtista;
   document.getElementById("player-art").src = capaMusica;
 
   let fotoAtualIndex = 0;
 
-  /* ============================================
-       EVENT LISTENER: BOTÃO "CLIQUE"
-       ============================================ */
-
+  /* ---- BOTÃO ENTRAR ---- */
   enterButton.addEventListener("click", () => {
-    // Fade out da tela inicial
     splashScreen.style.opacity = "0";
     setTimeout(() => {
       splashScreen.style.display = "none";
     }, 1000);
 
-    // Mostra conteúdo principal
     mainContent.style.display = "flex";
 
-    // Inicia música e atualiza ícone
     if (musica) {
-      musica.play();
-      playPauseIcon.classList.remove("fa-play");
-      playPauseIcon.classList.add("fa-pause");
+      musica.play().catch(() => {});
+      playPauseIcon.classList.replace("fa-play", "fa-pause");
     }
 
-    // Inicia funções periódicas
     iniciarSlideshow();
     setInterval(atualizarContador, 1000);
-    setInterval(criarEmoji, 400);
+    setInterval(criarEmoji, 500);
+
+    // Dispara os fogos
+    if (typeof iniciarFogos === "function") iniciarFogos();
   });
 
-  /* ============================================
-       EVENT LISTENERS: PLAYER DE MÚSICA
-       ============================================ */
-
-  // Play/Pause
+  /* ---- PLAYER: PLAY/PAUSE ---- */
   playPauseBtn.addEventListener("click", () => {
     if (musica.paused) {
       musica.play();
-      playPauseIcon.classList.remove("fa-play");
-      playPauseIcon.classList.add("fa-pause");
+      playPauseIcon.classList.replace("fa-play", "fa-pause");
     } else {
       musica.pause();
-      playPauseIcon.classList.remove("fa-pause");
-      playPauseIcon.classList.add("fa-play");
+      playPauseIcon.classList.replace("fa-pause", "fa-play");
     }
   });
 
-  // Atualizar barra de progresso
+  /* ---- PLAYER: PROGRESSO ---- */
   musica.addEventListener("timeupdate", () => {
-    const { currentTime, duration } = musica;
-    const progressPercent = (currentTime / duration) * 100;
-
-    if (!isNaN(progressPercent)) {
-      timelineProgress.style.width = `${progressPercent}%`;
-    }
+    const pct = (musica.currentTime / musica.duration) * 100;
+    if (!isNaN(pct)) timelineProgress.style.width = `${pct}%`;
   });
 
-  // Pular para posição clicada na barra
   timelineContainer.addEventListener("click", (e) => {
-    const width = timelineContainer.clientWidth;
-    const clickX = e.offsetX;
-    const duration = musica.duration;
-
-    musica.currentTime = (clickX / width) * duration;
+    musica.currentTime =
+      (e.offsetX / timelineContainer.clientWidth) * musica.duration;
   });
 
-  /* ============================================
-       FUNÇÕES PRINCIPAIS
-       ============================================ */
-
+  /* ---- SLIDESHOW ---- */
   function iniciarSlideshow() {
     slideshowImg.src = minhasFotos[fotoAtualIndex];
     slideshowImg.style.opacity = "1";
@@ -135,32 +99,32 @@ document.addEventListener("DOMContentLoaded", () => {
         slideshowImg.src = minhasFotos[fotoAtualIndex];
         slideshowImg.style.opacity = "1";
       }, 1000);
-    }, 3000);
+    }, 4000);
   }
 
+  /* ---- CONTADOR ---- */
   function atualizarContador() {
-    const agora = new Date();
-    const diff = agora - dataInicio;
+    const diff = new Date() - dataInicio;
+    const dias = Math.floor(diff / 86400000);
+    const horas = Math.floor((diff % 86400000) / 3600000);
+    const minutos = Math.floor((diff % 3600000) / 60000);
+    const segs = Math.floor((diff % 60000) / 1000);
 
-    let dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-    let horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    let segundos = Math.floor((diff % (1000 * 60)) / 1000);
-
-    counterElement.innerHTML = `Eu te amo há:<br>
-            <span>${dias} dias, ${horas}h ${minutos}m ${segundos}s</span>`;
+    if (counterElement) {
+      counterElement.textContent = `${dias} dias, ${horas}h ${minutos}m ${segs}s`;
+    }
   }
+
+  /* ---- EMOJIS ---- */
+  const emojis = ["❤️", "💛", "✨", "💕", "🥰", "🌸", "🌷", "💫"];
 
   function criarEmoji() {
-    const emojis = ["❤️", "💖", "✨", "💕", "🥰", "😍"];
-    const emoji = document.createElement("div");
-    emoji.classList.add("emoji");
-    emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-    emoji.style.left = Math.random() * 100 + "vw";
-    emoji.style.animationDuration = Math.random() * 5 + 5 + "s";
-    document.body.appendChild(emoji);
-    setTimeout(() => {
-      emoji.remove();
-    }, 10000);
+    const el = document.createElement("div");
+    el.classList.add("emoji");
+    el.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.animationDuration = Math.random() * 6 + 6 + "s";
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 12000);
   }
 });

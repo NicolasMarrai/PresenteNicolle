@@ -1,110 +1,187 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="imagem/favicon.ico" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="imagem/favicon.ico" type="image/x-icon" />
     <title>Para Você ❤️</title>
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/razoes.css">
-    <link rel="stylesheet" href="CSS/mensagem-especial.css">
-    <link rel="stylesheet" href="CSS/modal.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/razoes.css" />
+    <link rel="stylesheet" href="CSS/carta.css" />
+    <link rel="stylesheet" href="CSS/mensagem-especial.css" />
+    <link rel="stylesheet" href="CSS/modal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
 
-<body>
-
+  <body>
     <div id="splash-screen">
-        <button id="enter-button">❤️ CLIQUE ❤️</button>
+      <button id="enter-button">❤️ CLIQUE ❤️</button>
     </div>
 
     <div id="main-content">
-
-        <div id="music-player">
-            <img src="imagem/capa-musica.jpg" alt="Capa do Álbum" id="player-art">
-            <div id="player-info">
-                <div id="player-song-title">And I Love Her</div>
-                <div id="player-song-artist">The Beatles</div>
-            </div>
-
-            <div id="timeline-container">
-                <div id="timeline-progress"></div>
-            </div>
-
-            <button id="play-pause-btn">
-                <i class="fas fa-play"></i>
-            </button>
-        </div>
-        <div id="phone-frame">
-            <img id="slideshow" alt="Nossas fotos">
+      <div id="music-player">
+        <img src="imagem/capa-musica.jpg" alt="Capa do Álbum" id="player-art" />
+        <div id="player-info">
+          <div id="player-song-title">And I Love Her</div>
+          <div id="player-song-artist">The Beatles</div>
         </div>
 
-        <div id="nossa-data">
-            <div id="nossa-data-titulo">NOSSA DATA</div>
-            <div id="nossa-data-valor">❤️ 19/11 ❤️</div>
+        <div id="timeline-container">
+          <div id="timeline-progress"></div>
         </div>
 
-        <div id="counter"></div>
-        <p class="frase-romantica">
-            A cada dia que passa, meu coração se enche mais de carinho e admiração por você.
+        <button id="play-pause-btn">
+          <i class="fas fa-play"></i>
+        </button>
+      </div>
+      <div id="phone-frame">
+        <img id="slideshow" alt="Nossas fotos" />
+      </div>
+
+      <div id="nossa-data">
+        <div id="nossa-data-titulo">NOSSA DATA</div>
+        <div id="nossa-data-valor">❤️ 19/11 ❤️</div>
+      </div>
+
+      <div id="counter"></div>
+      <p class="frase-romantica">
+        A cada dia que passa, meu coração se enche mais de carinho e admiração
+        por você.
+      </p>
+
+      <section class="secao-sentimentos">
+        <h2>Isso é pra quando você estiver sentindo algo:</h2>
+        <div class="botoes-sentimentos">
+          <button
+            onclick="abrirModal('triste')"
+            class="botao-sentimento sentimento-triste"
+          >
+            Triste 🥺
+          </button>
+          <button
+            onclick="abrirModal('cansada')"
+            class="botao-sentimento sentimento-cansada"
+          >
+            Cansada 😩
+          </button>
+          <button
+            onclick="abrirModal('saudade')"
+            class="botao-sentimento sentimento-saudade"
+          >
+            Com saudade 😔
+          </button>
+          <button
+            onclick="abrirModal('feliz')"
+            class="botao-sentimento sentimento-feliz"
+          >
+            Feliz 🥰
+          </button>
+        </div>
+      </section>
+
+      <section id="secao-razoes">
+        <h2>Razão para eu te amar:</h2>
+        <div class="caixa-razao">
+          <p id="razao-texto">...</p>
+        </div>
+        <button id="botao-nova-razao">Outra razão 🥰</button>
+      </section>
+
+      <section id="mensagem-especial">
+        <div class="icone-musical">🎵</div>
+        <p>Agora, meu amor, eu separei algo muito especial pra você...</p>
+        <p>
+          Uma música que expressa tudo que eu sinto. Clica aqui e deixa ela
+          tocar enquanto você pensa em nós 💕
         </p>
+        <a
+          href="https://www.youtube.com/watch?v=77A5E2kwLBE&list=RD77A5E2kwLBE&start_radio=1"
+          target="_blank"
+          class="link-especial"
+          >🎶 Ouvir Nossa Música 🎶</a
+        >
+      </section>
 
-        <section class="secao-sentimentos">
-            <h2>Isso é pra quando você estiver sentindo algo:</h2>
-            <div class="botoes-sentimentos">
-                <button onclick="abrirModal('triste')" class="botao-sentimento sentimento-triste">
-                    Triste 🥺
-                </button>
-                <button onclick="abrirModal('cansada')" class="botao-sentimento sentimento-cansada">
-                    Cansada 😩
-                </button>
-                <button onclick="abrirModal('saudade')" class="botao-sentimento sentimento-saudade">
-                    Com saudade 😔
-                </button>
-                <button onclick="abrirModal('feliz')" class="botao-sentimento sentimento-feliz">
-                    Feliz 🥰
-                </button>
-            </div>
-        </section>
+      <section id="secao-carta" onclick="abrirCarta()" role="button">
+        <span class="carta-tag">NOSSO PRESENTE</span>
+        <p class="carta-preview">Para a minha Nicolle — Abra meu presente ♡</p>
+        <p class="carta-hint">Clique para ler</p>
+      </section>
 
-        <section id="secao-razoes">
-            <h2>Razão para eu te amar:</h2>
-            <div class="caixa-razao">
-                <p id="razao-texto">
-                    ...
-                </p>
-            </div>
-            <button id="botao-nova-razao">Outra razão 🥰</button>
-        </section>
-
-        <section id="mensagem-especial">
-            <div class="icone-musical">🎵</div>
-            <p>Agora, meu amor, eu separei algo muito especial pra você...</p>
-            <p>Uma música que expressa tudo que eu sinto. Clica aqui e deixa ela tocar enquanto você pensa em nós 💕</p>
-            <a href="https://www.youtube.com/watch?v=77A5E2kwLBE&list=RD77A5E2kwLBE&start_radio=1" target="_blank" class="link-especial">🎶 Ouvir Nossa Música 🎶</a>
-        </section>
-
-        <p class="nota-de-amor">
-            ✨ Este site é um projeto de amor contínuo. Com o passar do tempo, vou atualizá-lo com novas fotos, músicas e mensagens, para que ele possa ficar aceso no seu coração e você possa entrar nele sempre que quiser, é apenas um lembrete do meu carinho. ✨
+      <section id="secao-mapa">
+        <span class="mapa-tag">NOSSO LUGAR</span>
+        <div id="mapa-container"></div>
+        <p class="mapa-frase">
+          Dom Bacon - onde você se sentiu em casa comigo ♡
         </p>
+      </section>
 
+      <p class="nota-de-amor">
+        ✨ Este site é um projeto de amor contínuo. Com o passar do tempo, vou
+        atualizá-lo com novas fotos, músicas e mensagens, para que ele possa
+        ficar aceso no seu coração e você possa entrar nele sempre que quiser, é
+        apenas um lembrete do meu carinho. ✨
+      </p>
     </div>
 
     <audio id="musica-de-fundo" src="Audio/nossa-musica.mp3" loop></audio>
 
     <div id="modal-overlay" class="modal-overlay">
-        <div class="modal-conteudo">
-            <span class="modal-titulo">Selecionei isto para você, meu amor:</span>
-            <p id="modal-frase" class="modal-frase"></p>
-            <button class="modal-fechar" onclick="fecharModal()">
-                &times; </button>
+      <div class="modal-conteudo">
+        <span class="modal-titulo">Selecionei isto para você, meu amor:</span>
+        <p id="modal-frase" class="modal-frase"></p>
+        <button class="modal-fechar" onclick="fecharModal()">&times;</button>
+      </div>
+    </div>
+
+    <div id="carta-overlay" class="modal-overlay">
+      <div class="modal-conteudo carta-modal-conteudo">
+        <button class="modal-fechar" onclick="fecharCarta()">&times;</button>
+        <div class="carta-texto">
+          <p>Meu amor,</p>
+
+          <p>
+            Hoje é Dia dos Namorados, mas, pra ser honesto, eu penso em você
+            todos os dias como se fosse esse dia. Lembro daquela noite no Dom
+            Bacon — a gente sentado lá, a comida gostosa, aquela batata com
+            cheddar que você amou, e você rindo, se abrindo, se sentindo
+            confortável comigo. Foi naquele momento que eu entendi que você era
+            especial de um jeito diferente.
+          </p>
+
+          <p>
+            Não era só a conversa; era a forma como você estava presente, como
+            os seus olhos brilhavam quando você falava — como você me fez sentir
+            que eu queria ser o cara que te faz sorrir sempre.
+          </p>
+
+          <p>
+            De lá pra cá, cada dia ao seu lado virou um presente. Aprendi que o
+            teu abraço resolve coisas que palavras não conseguem e que a tua
+            risada é o melhor som do mundo. Acima de tudo, amar você é a coisa
+            mais natural que já senti. Você me ensina todos os dias o que é
+            leveza, carinho e cuidado.
+          </p>
+
+          <p>
+            Prometo continuar aqui, do seu lado, sendo o lugar mais seguro que
+            você já conheceu. Feliz Dia dos Namorados, minha Nicolle. Este site,
+            estas fotos e estas palavras são só um pedacinho do que eu sinto — o
+            resto está guardado no meu coração e eu mostro pra você em cada
+            detalhe, todos os dias.
+          </p>
+
+          <p class="carta-assinatura">Com todo o meu amor,<br />Nicolas ♡</p>
         </div>
+      </div>
     </div>
 
     <script src="JS/modal.js"></script>
     <script src="JS/script.js"></script>
     <script src="JS/razoes.js"></script>
-</body>
-
+    <script src="JS/mapa.js"></script>
+  </body>
 </html>

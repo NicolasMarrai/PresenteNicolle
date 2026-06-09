@@ -1,0 +1,55 @@
+/* ============================================
+   CARTA DE DIA DOS NAMORADOS — MODAL
+   ============================================ */
+
+.carta-modal-conteudo {
+  max-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.carta-texto {
+  font-family: var(--fonte-display);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--marrom);
+  line-height: 1.9;
+  white-space: pre-line;
+  margin-top: 4px;
+}
+
+.carta-texto p {
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+
+.carta-texto p:first-child {
+  margin-top: 0;
+}
+
+.carta-assinatura {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.carta-texto::before {
+  content: "❧";
+  display: block;
+  text-align: center;
+  color: var(--dourado);
+  font-size: 20px;
+  margin-bottom: 14px;
+  font-style: normal;
+}
+
+.carta-texto::after {
+  content: "❧";
+  display: block;
+  text-align: center;
+  color: var(--dourado);
+  font-size: 20px;
+  margin-top: 16px;
+  font-style: normal;
+}
