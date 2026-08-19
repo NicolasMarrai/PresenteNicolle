@@ -63,6 +63,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Dispara os fogos
     if (typeof iniciarFogos === "function") iniciarFogos();
+
+    // Revela o card de aniversário (9 meses)
+    setTimeout(() => {
+      const cardAniversario = document.getElementById("card-aniversario");
+      if (cardAniversario) cardAniversario.classList.add("mostrar");
+    }, 300);
+
+    // Chuva intensa de emojis de parabéns
+    let chuvaParabensCount = 0;
+    const chuvaParabensInterval = setInterval(() => {
+      criarEmojiParabens();
+      criarEmojiParabens();
+      chuvaParabensCount++;
+      if (chuvaParabensCount > 16) clearInterval(chuvaParabensInterval);
+    }, 150);
   });
 
   /* ---- PLAYER: PLAY/PAUSE ---- */
@@ -126,5 +141,20 @@ document.addEventListener("DOMContentLoaded", () => {
     el.style.animationDuration = Math.random() * 6 + 6 + "s";
     document.body.appendChild(el);
     setTimeout(() => el.remove(), 12000);
+  }
+
+  /* ---- EMOJIS DE PARABÉNS ---- */
+  const emojisParabens = ["🎉", "🎊", "🥳", "🎈", "🎁", "❤️", "✨"];
+
+  function criarEmojiParabens() {
+    const el = document.createElement("div");
+    el.classList.add("emoji");
+    el.innerText =
+      emojisParabens[Math.floor(Math.random() * emojisParabens.length)];
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.fontSize = Math.random() * 0.8 + 1.4 + "rem";
+    el.style.animationDuration = Math.random() * 4 + 4 + "s";
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 9000);
   }
 });
